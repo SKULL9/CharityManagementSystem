@@ -568,8 +568,7 @@ def voldonation_notrec(request):
 
 
 def gallery(request, pid):
-    if not request.user.is_authenticated:
-        return redirect('donor_login')
+
     donation = Donation.objects.get(id=pid)
     gallery = Gallery.objects.get(donation=donation)
     error = ""
