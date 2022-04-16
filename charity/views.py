@@ -567,7 +567,33 @@ def voldonation_notrec(request):
 
 
 
+def gallery(request, pid):
+    if not request.user.is_authenticated:
+        return redirect('donor_login')
+    donation = Donation.objects.get(id=pid)
+    gallery = Gallery.objects.get(donation=donation)
+    error = ""
+    if request.method == "POST":
+        status = request.POST['status']
+        deliverypic = request.FILES['deliverypic']
+
+    try:
+
+        Gallery.objects.get(donation=donation,deliverypic=deliverypic)
+        error = "no"
+
+    except:
+        error = "yes"
+
+    return render(request, 'gallery.html', locals())
 
 
 
+
+def gallery_ind(request):
+
+    donor = Donor.objects.all()
+    donation = Donation.objects.filter(status="Donation Delivered Succesfully")
+    gallery = Gallery.objects.all()
+    return render(request, 'gallery_ind.html', locals())
 

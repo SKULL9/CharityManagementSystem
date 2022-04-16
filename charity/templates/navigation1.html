@@ -1,0 +1,28 @@
+{% load static %}
+
+    <link rel="stylesheet" href="{% static 'css/mystyle.css'%}">
+
+
+  <nav class="navbar navbar-expand-sm navbar-light ">
+    <div class="container">
+        <a href="#" class="navbar-brand">
+          <img src="" alt="">
+
+                <img src = "{% static 'images/donation.jpg' %}" width="70" height="50">
+                <span style="color: green;font-size: 50px;">charity </span>
+                <span style="color: yellow;font-size: 50px;">Management</span>
+                <span style="color: red; font-size: 50px;">System</span>
+            </a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#myMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse text-center" id="myMenu">
+                <ul class="navbar-nav pl-5 custom-nav ml-auto">
+
+                <li class="nav-item"><a href="{% url 'index' %}" class="nav-link">Go back to homepage</a></li>
+
+                </ul>
+            </div>
+        </div>
+
+    </nav>

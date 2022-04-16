@@ -3,12 +3,12 @@
 <html>
 
 <head>
-
+<link rel="stylesheet" href="{% static 'css/login.css'%}">
 </head>
 
 </html>
 
-<body>
+<body style="background-image: url({% static 'images/children2.jpg' %});>
     {% include 'navigation.html' %}
     <hr class="mt-0">
 
@@ -23,7 +23,7 @@
                     <img src="{% static 'images/loginr.jpg' %}" alt="" class="card-img-top" style="width: 100%; height: 200px;">
                     <div class="card-body">
                         <h4 class="card-title">Donor</h4>
-                        <p class="card-text">some example text</p>
+                        <p class="card-text">people who are ready to giveaway their things</p>
                         <a href="{% url 'donor_login' %}" class="btn btn-primary">Donor login</a>
                     </div>
 
@@ -34,7 +34,7 @@
                     <img src="{% static 'images/volunteer.jpg' %}" alt="" class="card-img-top" style="width: 100%; height: 200px;">
                     <div class="card-body">
                         <h4 class="card-title">volunteer</h4>
-                        <p class="card-text">Lorem ipsum dolor sit amet.</p>
+                        <p class="card-text">people who r ready to help </p>
                        <a href="volunteer_login" class="btn btn-primary">volunteer login</a> 
                     </div>
 
@@ -45,7 +45,7 @@
                     <img src="{% static 'images/admin.jpg' %}" alt="" class="card-img-top" style="width: 100%; height: 200px;">
                     <div class="card-body">
                         <h4 class="card-title">Admin</h4>
-                        <p class="card-text">Lorem ipsum dolor sit amet.</p>
+                        <p class="card-text">people who manages this whole system</p>
                          <a href="admin_login" class="btn btn-primary">Admin login</a> 
                     </div>
 

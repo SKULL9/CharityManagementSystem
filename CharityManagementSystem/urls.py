@@ -71,5 +71,10 @@ urlpatterns = [
     path('voldonation_notrec',voldonation_notrec,name='voldonation_notrec'),
 
 
+    path('gallery/<int:pid>',gallery,name='gallery'),
+
+    path('gallery_ind',gallery_ind,name='gallery_ind'),
+
+
 
 ]+static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

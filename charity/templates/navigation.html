@@ -37,7 +37,7 @@
                     <li class="nav-item"><a href="#about" class="nav-link">about us</a></li>
                     <li class="nav-item"><a href="#donate" class="nav-link">donate</a></li>
                     <li class="nav-item"><a href="#contact" class="nav-link">contact</a></li>
-                    <li class="nav-item"><a href="#contact" class="nav-link">gallary</a></li>
+                    <li class="nav-item"><a href="{% url 'gallery_ind' %}" class="nav-link">gallary</a></li>
                     <li class="nav-item"><a href="{% url 'all_logins' %}" class="nav-link">Login</a></li>
                     {% else %}
                 <li class="nav-item"><a href="{% url 'index' %}" class="nav-link">Go back to homepage</a></li>
