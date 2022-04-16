@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+
+   
+</head>
+<body style="background-image: url({% static 'images/children1.jpg' %});">
+    {% include 'navigation.html' %}
+    <hr class="mt-0">
+    <div class="row">
+        <div class="col-lg-5 m-auto">
+            <div class="card mt-5 bg-dark">
+                <div class="card-title text-center mt-3">
+                    <img src="{% static 'images/volunteer.jpg' %}" alt="" width="150" height="150">
+                    <h2 style="color: aliceblue;">volunteer Login</h2>
+                </div>
+                <div class="card-body">
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                    <i class="fa fa-user fa-2x"></i>
+                                </span>
+                            </div>
+                            <input type="email" name="emailid" class="form-control py-4" placeholder="Email Id">
+                        </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                    <i class="fa fa-lock fa-2x"></i>
+                                </span>
+                            </div>
+                            <input type="password" name="pwd" class="form-control py-4" placeholder="password">
+                        </div>
+                        <input type="submit" value="login" class="btn btn-success px-5">
+                        <a href="{% url 'volunteer_reg' %}" class="float-right text-white mt-2">Create Account <i class="fas fa-angle-double-right"></i></a>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+{% if error == "no" %}
+<script>
+    alert('Sign in successful');
+    window.location=('{% url 'volunteer_home' %}');
+</script>
+{% endif %}
+{% if error == "yes" %}
+<script>
+    alert('Invalid credentials. Try again! ');        
+</script>
+{% endif %}
+{% if error == "not" %}
+<script>
+    alert('your login status is pending ');        
+</script>
+{% endif %}
+</body>
+</html>

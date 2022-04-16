@@ -1,0 +1,57 @@
+{% extends 'admin_base.html' %}
+
+
+
+{% block main %}
+
+
+
+
+
+        <div class="card shadow">
+            <div class="card-body">
+                
+                <h5 class="p-2" style="border-bottom : 2px solid orange">view all volunteer </h5>
+            <div class="container-fluid">
+                <table id="example" class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <th>S.No.</th>
+                        <th>volunteer Name</th>
+                        <th>email id</td>  
+                        <th>contact number</td>  
+                        <th>status</th>
+                        <th>reg. date</th>
+                        <th>action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        {% for i in volunteer %}
+                        <tr>
+                            <td>{{forloop.counter}}</td>
+                            <td>{{i.user.first_name}} {{i.user.last_name}}</td>
+                            <td>{{i.user.username}}</td> 
+                            <td>{{i.contact}}</td> 
+                            <td>{{i.status}}</td> 
+                            <td>{{i.regdate}}</td> 
+                            <td>
+                                <a href="{%url 'view_volunteerdetail' i.id %}"class="text-primary">View Details</a>
+                               | <a href="{%url 'delete_volunteer' i.user.id %}"class="text-danger"onclick="return confirm('are you sure?')">delete</a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+
+                        
+
+
+
+
+            </div>
+
+            
+            </div>
+        </div>
+
+
+{% endblock %}

@@ -1,0 +1,59 @@
+{% extends 'admin_base.html' %}
+
+
+
+{% block main %}
+
+
+
+
+
+        <div class="card shadow">
+            <div class="card-body">
+                
+                <h5 class="p-2" style="border-bottom : 2px solid orange">edit Donation detail </h5>
+            <div class="container-fluid">
+
+
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label>Donation Area Name</label>
+                                <input type="text" name="area" class="form-control" placeholder="Doation Area" required value="{{area.areaname}}" >                                                              </div>
+                        </div>
+    
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label>Description </label>
+                                <textarea name="description" class="form-control" placeholder="description" required>{{area.description}} </textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <input type="submit" value="Submit" class="btn-danger px-3">
+       
+                </form>
+                
+
+            </div>
+            </div>
+        </div>
+
+
+{% if error == "no" %}
+<script>
+    alert('Donation area has been updated');
+    window.location=('{% url 'manage_area' %}');
+</script>
+{% endif %}
+
+
+{% if error == "yes" %}
+<script>
+    alert('something went wrong. please try again');
+    
+</script>
+{% endif %}      
+
+{% endblock %}

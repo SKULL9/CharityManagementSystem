@@ -1,0 +1,51 @@
+{% extends 'admin_base.html' %}
+
+
+
+{% block main %}
+
+
+
+
+
+        <div class="card shadow">
+            <div class="card-body">
+                
+                <h5 class="p-2" style="border-bottom : 2px solid orange">Manage Donation area </h5>
+            <div class="container-fluid">
+                <table id="example" class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <th>s.no.</th>
+                        <th>donation Area Name</th>
+                        <th>description</td>  
+                        <th>creationdate</td>  
+                        <th>action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        {% for i in area %}
+                        <tr>
+                            <td>{{forloop.counter}}</td>
+                            <td>{{i.areaname}}</td>
+                            <td>{{i.description}}</td>  
+                            <td>{{i.creationdate}}</td> 
+                            <td><a href="{%url 'edit_area' i.id %}"class="text-primary">Edit Details</a>  <a href="{%url 'delete_area' i.id %}" onclick="return confirm('are you sure?')" class="text-danger">Delete</a> </td>
+                        
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+
+                        
+
+
+
+
+            </div>
+
+            
+            </div>
+        </div>
+
+
+{% endblock %}

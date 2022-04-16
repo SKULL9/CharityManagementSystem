@@ -1,0 +1,116 @@
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/sidebar.css' %}">
+
+    <script src="{% static 'js/myjs.js' %}"></script>
+    <script src="https://kit.fontawesome.com/2e375cc1ab.js" crossorigin="anonymous"></script>
+    
+    <title>Charity Management System</title>
+
+
+    
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.2.2/js/dataTables.buttons.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.html5.min.js"></script>
+<link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.2/css/buttons.dataTables.min.css">
+
+
+
+<script>
+
+    $(document).ready(function() {
+    $('#example').DataTable( {
+            dom: 'Bfrtip',
+            buttons: [
+                'copyHtml5',
+                'excelHtml5',
+                'csvHtml5',
+                'pdfHtml5'
+            ]
+        } );
+    } );
+
+
+</script>
+
+
+
+
+
+</head>
+
+<body>
+    <style>
+        
+    </style>
+    <div class="vertical-nav bg-white" id="sidebar">
+        <div class="py-4 px-3 mb-1bg-light">
+            <p class="text-center font-weight-bold text-uppercase px-3 small dashboard-text">
+                charity Management System
+            </p>
+            <div class="media d-flex align-items-center">
+                <img src="{{request.user.donor_set.all.0.userpic.url}}" width="80" height="80" alt="">
+                <div class="media-body">
+                    <h4 class="mb-0">Donor</h4>
+                    <p class="text-muted mb-0">{{ request.user.username }}</p>
+                </div>
+            </div>
+        </div>
+        <ul class="nav flex-column bg-white">
+            <li class="nav-item">
+                <a href="{% url 'donation_history' %}" class="nav-link text-dark bg-light">
+                    <i class="fas fa-tachometer-alt fa-fw mr-3 text-primary"></i>
+                    Donation History
+                </a>
+
+            <li class="nav-item">
+                <a href="{% url 'donate_now' %}" class="nav-link text-dark bg-light">
+                    <i class="fas fa-tachometer-alt fa-fw mr-3 text-primary"></i>
+                    Donate Now
+                </a>
+            </li>
+            </li>
+
+        </ul>
+    </div>
+
+
+    <div class="page-content p-4" id="content">
+        <a href="{% url 'logout' %}" title="logout" class="float-right text-white"><i class="fa fa-sign-out"></i></a>
+
+        <button id="sidebarCollapse" type="button" class="btn btn-light bg-white rounded-pill"><i
+                class="fas fa-bars mr-2"></i><small class="text-uppercase font-weight-bold">Toggle</small></button>
+
+
+{% block main %}
+
+{% endblock %}
+                
+    </div>
+
+    
+    <script>
+    </script>
+</body>
+
+
+
+
+</html>
+

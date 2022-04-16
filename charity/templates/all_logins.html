@@ -1,0 +1,77 @@
+{% load static %}
+
+<html>
+
+<head>
+
+</head>
+
+</html>
+
+<body>
+    {% include 'navigation.html' %}
+    <hr class="mt-0">
+
+
+
+
+    <div class="container mt-5">
+        <h2 class="text-center">Login as</h2>
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="card" style="width: 300px;">
+                    <img src="{% static 'images/loginr.jpg' %}" alt="" class="card-img-top" style="width: 100%; height: 200px;">
+                    <div class="card-body">
+                        <h4 class="card-title">Donor</h4>
+                        <p class="card-text">some example text</p>
+                        <a href="{% url 'donor_login' %}" class="btn btn-primary">Donor login</a>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card" style="width: 300px;">
+                    <img src="{% static 'images/volunteer.jpg' %}" alt="" class="card-img-top" style="width: 100%; height: 200px;">
+                    <div class="card-body">
+                        <h4 class="card-title">volunteer</h4>
+                        <p class="card-text">Lorem ipsum dolor sit amet.</p>
+                       <a href="volunteer_login" class="btn btn-primary">volunteer login</a> 
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card" style="width: 300px;">
+                    <img src="{% static 'images/admin.jpg' %}" alt="" class="card-img-top" style="width: 100%; height: 200px;">
+                    <div class="card-body">
+                        <h4 class="card-title">Admin</h4>
+                        <p class="card-text">Lorem ipsum dolor sit amet.</p>
+                         <a href="admin_login" class="btn btn-primary">Admin login</a> 
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% if error == "no" %}
+    <script>
+        alert('Sign in successful');
+        window.location=('{% url 'donor_home' %}');
+    </script>
+    {% endif %}
+    {% if error == "yes" %}
+    <script>
+        alert('Invalid credentials. Try again! ');
+        window.location=('{% url 'donor_reg' %}');
+    </script>
+    {% endif %} 
+
+
+
+
+    
+</body>
+
+</html>
+
