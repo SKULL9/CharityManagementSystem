@@ -8,20 +8,20 @@
 
 </html>
 
-<body>
+<body class="bg-dark">
     {% include 'navigation.html' %}
     <hr class="mt-0">
     <div class="container-fluid" id="home">
 
         <div class="row mb-5">
             <div class="col-lg-6">
-                <p class="text-center pt-3 mb-0" style="color:red; font-size: 20px;">Reduce Wastage of needy items</p>
+                <p class="text-center pt-3 mb-0" style="color:red; font-size: 40px; font-weight: bold">Reduce Wastage of needy items</p>
                 <h3 class="px-5 pt-5" style="color: green;">Giving is not just about giving donation. It's about making
                     a difference. Donate today.</h3>
                 <h3 class="px-5 pt-3" style="color: blue;">Those who are happiest are those who do the most for others.
                 </h3>
                 <div class="px-5" style="padding-top: 30px;">
-                    <a href="https://www.conserve-energy-future.com/15-easy-ways-to-reduce-landfill-waste.php" class="btn btn-success">Read more <i class="fas fa-angle-double-right"></i></a>
+                    <a href="https://www.conserve-energy-future.com/15-easy-ways-to-reduce-landfill-waste.php" class="btn btn-danger">Read more <i class="fas fa-angle-double-right"></i></a>
                     <a href="{% url 'all_logins' %}" class="btn btn-primary">Donate now <i class="fas fa-angle-double-right"></i></a>
                 </div>
             </div>
@@ -38,12 +38,12 @@
                 </div>
 
                 <div class="col-lg-6">
-                    <h2 class="text-center pt-3 mb-0 text-secondary" style="font-size: 30px;">About us</h2>
-                    <p class="px-5 pt-5" style="font-size: 20px;">
+                    <h2 class="text-center pt-3 mb-0 text-danger" style="font-size: 40px;font-weight: bold">About us</h2>
+                    <p class="px-5 pt-5" style="font-size: 20px;color:green">
                         We have created a platform where the donor can put up his/her credentials (which would certainly be verified by the admin prior to the donation process).Later, the founders of the charity foundation would get funded the amount of the donation after the legal verifications
                     </p>
                     <div class="px-5">
-                        <a href="" class="btn btn-success">Read more <i class="fas fa-angle-double-right"></i></a>
+                        <a href="" class="btn btn-danger">Read more <i class="fas fa-angle-double-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -53,7 +53,7 @@
     <hr class="mt-0">
 
     <div class="container mt-3 mb-5">
-        <h1 class="text-center text-danger font-weight-bold mb-3" style="font-family: Monotype Corsiva;"> Our Special Services </h1>
+        <h1 class="text-center text-danger font-weight-bold mb-3" style="font-family: Monotype Corsiva;font-weight: bold"> Our Special Services </h1>
         
         
         
@@ -166,14 +166,14 @@
             <hr style="margin-top: 100px;">
             <div class="row" id="donate">
                 <div class="col-lg-6" style="margin: auto;">
-                    <h3 class="text-center pt-5" style="color:green;"> 
+                    <h3 class="text-center pt-5" style="color:yellow;">
                         Best way to help others
                     </h3>
                     <p class="text-center" style="color: red; font-size: 20px;">Join us and become a part of this good work.</p>
                     <center><a href="{% url 'all_logins' %}" class="btn btn-primary mt-5">Donate now</a></center>
                 </div> 
                 <div class="col-lg-6" style="margin: auto;">
-                    <h3 class="text-center pt-5" style="color:green;"> 
+                    <h3 class="text-center pt-5" style="color:yellow;">
                         Charity Foundations
                     </h3>
                     <p class="text-center" style="color: red; font-size: 20px;">Sign up and get all the help you can.</p>
@@ -186,19 +186,19 @@
                 <h1 class="text-center font-weight-bold" style="font-family: Monotype Corsiva; color: red;">Contact Us</h1>
                 <div class="row mt-5">
                     <div class="col-lg-3 col-sm-6">
-                        <h4><i class="fas fa-phone-square"></i>Contact</h4>
+                        <h4 class="text-warning"><i class="fas fa-phone-square"></i>  Contact</h4>
                         <p class="mt-3 text-danger font-weight-bold"><a href="tel:9998793531">tel:9998793531</a></p>
                     </div>
                     <div class="col-lg-3 col-sm-6">
-                        <h4><i class="fas fa-envelope"></i>Send Email</h4>
+                        <h4 class="text-warning"><i class="fas fa-envelope"></i>  Send Email</h4>
                         <p class="mt-3 text-danger font-weight-bold"><a href="mailto:yashmistryslm@gmail.com">yashmistryslm@gmail.com</a></p>
                     </div>
                     <div class="col-lg-3 col-sm-6">
-                        <h4><i class="fas fa-address-card"></i>Address</h4>
+                        <h4 class="text-warning"><i class="fas fa-address-card"></i>  Address</h4>
                         <p class="mt-3 text-danger font-weight-bold"><a href="https://www.google.com/maps/place/Adajan,+Surat,+Gujarat">adajan surat</a></p>
                     </div>
                     <div class="col-lg-3 col-sm-6">
-                        <h4><i class="fa fa-clock"></i>Office Hours</h4>
+                        <h2 ><i class="fa fa-clock bg-warning"></h2></i> <h4 class="text-warning"> Office Hours</h4>
                         <p class="mt-3 text-danger font-weight-bold">9am - 6pm</p>
                     </div>
                 </div>
@@ -223,7 +223,7 @@
                     </div>
                 </div>
                 <div class="col-md-6 text-right">
-                    <small>Copyright &copy; @<script>document.write(new Date().getFullYear()); </script> All rights reserved. Made by yash mistry</small>
+                    <small> Made by yash mistry</small>
                 </div>
             </div>
             <div class="scrolltop float-right">
